@@ -1,13 +1,15 @@
 function Home() {
     return <body>
         <h1>
-            Olá, pessoa!
+            Olá, Bea!
         </h1>
         <p>
             Saiba que eu te amo S2!
         </p>
-        
-    </body>;
+        <p>
+            e você fede! 🤢
+        </p>
+    </body>
 }
 
 export default Home;
