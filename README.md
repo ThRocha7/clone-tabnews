@@ -4,7 +4,15 @@ Implementação do http://tabnews.com.br para o curso.dev :D
 
 # Comandos Usados
 
-Essa área contém alguns comandos que, julgo eu, são importantes e que, mais pra frente, vou querer lembrar.
+nvm ls -> mostra as versões do node;
+
+nvm install nome_da_versao -> instala a versão;
+
+nvm alias default versao -> deixa como padrão uma verão especifica do node;
+
+npm init -> cria um manifesto;
+
+npm install -> baixa frameworks;
 
 git diff # Mostra as diferenças dos arquivos que foram modificados;
 
