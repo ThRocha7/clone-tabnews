@@ -2,6 +2,7 @@ import { defineConfig } from "eslint/config";
 import js from "@eslint/js";
 import globals from "globals";
 import react from "eslint-plugin-react";
+import jest from "eslint-plugin-jest";
 
 export default defineConfig([
   {
@@ -12,7 +13,6 @@ export default defineConfig([
   {
     files: ["**/*.{js,mjs,cjs,jsx}"],
     languageOptions: {
-      ecmaVersion: 2020,
       globals: { ...globals.browser, ...globals.node },
       parserOptions: {
         ecmaVersion: "latest",
@@ -23,9 +23,7 @@ export default defineConfig([
   },
   {
     files: ["**/*.{js,jsx,mjs,cjs,ts,tsx}"],
-    plugins: {
-      react,
-    },
+    plugins: { react },
     languageOptions: {
       parserOptions: {
         ecmaFeatures: {
@@ -35,6 +33,21 @@ export default defineConfig([
       globals: {
         ...globals.browser,
       },
+    },
+  },
+  {
+    // update this to match your test files
+    files: ["**/*.spec.js", "**/*.test.js"],
+    plugins: { jest },
+    languageOptions: {
+      globals: jest.environments.globals.globals,
+    },
+    rules: {
+      "jest/no-disabled-tests": "warn",
+      "jest/no-focused-tests": "error",
+      "jest/no-identical-title": "error",
+      "jest/prefer-to-have-length": "warn",
+      "jest/valid-expect": "error",
     },
   },
 ]);
