@@ -27,5 +27,5 @@ test("GET to api/v1/migrations should return 200", async () => {
   const responseBody2 = await response2.json();
 
   expect(Array.isArray(responseBody2)).toBe(true);
-  expect(responseBody2.length).toBe(0);
+  expect(responseBody2).toHaveLength(0);
 });
